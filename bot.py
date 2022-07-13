@@ -1,4 +1,4 @@
-f = open("vs_202206.txt","r") 
+f = open("c.txt","r") 
 
 while True:
     line = f.readline()
@@ -21,7 +21,7 @@ while True:
         j+=1
 
 
-    while(j < (len(line) - 2)):
+    while(j < (len(line) - 1)):
         numeroCambiare += line[j]
         #print(line[j], end="")
         j+=1
@@ -38,7 +38,7 @@ while True:
             x+=1
 
         y += 1
-
+    
 
     #Ottenimento numero
     x = 0
@@ -51,22 +51,21 @@ while True:
 
         y += 1
 
-    #print(numeroCambiare)
+    
 
     #Ottenimento numero nuovo
     h = 0
     a = 1
 
-    lenLine = len(numeroCambiare)
+    lenLine = len(numero)
     if(numeroCambiare not in numero):
-        numeroNuovo += '00'
+        #numeroNuovo += '00'
         numeroNuovo += numeroCambiare
-        lenN = len(numeroNuovo)
+        lenN = len(numeroCambiare)
 
-        #print(numeroNuovo)
         while(a < lenN):
             try:
-                numeroNuovo += numero[1 + lenLine + a]
+                numeroNuovo += numero[ lenLine + a]
             except:
                 print("errore")   
 
