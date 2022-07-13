@@ -1,4 +1,4 @@
-f = open("c.txt","r") 
+f = open("vs_202206.txt","r") 
 
 while True:
     line = f.readline()
@@ -21,7 +21,7 @@ while True:
         j+=1
 
 
-    while(j < (len(line) - 1)):
+    while(j < (len(line) - 2)):
         numeroCambiare += line[j]
         #print(line[j], end="")
         j+=1
@@ -72,6 +72,7 @@ while True:
             a += 1
     else:
         numeroNuovo = numero
+    #print(numeroCambiare)
 
     #Fine stringa
     lineMod += numeroNuovo
