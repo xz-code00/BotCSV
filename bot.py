@@ -1,5 +1,12 @@
-f = open("vs_202206.txt","r") 
+FILE_CSV_INPUT = "c.txt"
+FILE_CSV_OUTPUT = "new.txt"
 
+
+#Apertura del file csv
+f = open(FILE_CSV_INPUT,"r") 
+
+
+#Ciclo eseguito per ogni riga
 while True:
     line = f.readline()
     lineCopy = line
@@ -10,9 +17,10 @@ while True:
 
     if not line:
         print("end")
+        exit()
 
 
-    #Prende numero da copiare
+#Prelievo del numero da sostiture dalla cella "prefix"
     i = 0
     j = 0
     while(i < 19):
@@ -27,7 +35,9 @@ while True:
         j+=1
 
     print ('\n')
-    #Scrive prima parte della stringa
+
+
+#Generazione e scrittura della parte antecedente della stringa
     x = 0
     y = 0
 
@@ -40,7 +50,7 @@ while True:
         y += 1
     
 
-    #Ottenimento numero
+#Viene estratto per essere comparato il numero da modificare
     x = 0
     while(True):
         
@@ -53,8 +63,7 @@ while True:
 
     
 
-    #Ottenimento numero nuovo
-    h = 0
+#Generazione e se necessario sostituzione della nuova numerazione
     a = 1
 
     lenLine = len(numero)
@@ -67,20 +76,21 @@ while True:
             try:
                 numeroNuovo += numero[ lenLine + a]
             except:
-                print("errore")   
+                print("In esecuzione")   
 
             a += 1
     else:
         numeroNuovo = numero
     #print(numeroCambiare)
 
-    #Fine stringa
+
+
+#Viene generata la parte finale della stringa e accodata
     lineMod += numeroNuovo
 
     b = len(lineMod)
     c = 0
     z = 1
-
 
     while(c < 13):
         lineMod = lineMod + lineCopy[b]
@@ -91,8 +101,10 @@ while True:
 
     #print (lineMod)
 
-    with open("new.txt", "a") as text_file:
+
+#Viene inserita la nuova stringa nel file
+    with open(FILE_CSV_OUTPUT, "a") as text_file:
         text_file.write(lineMod)
         text_file.write("\n")
 
-    print("riga fatta")
+    print("Riga generata con successo")
