@@ -51,7 +51,6 @@ while True:
     
 
 #Viene estratto per essere comparato il numero da modificare
-    x = 0
     while(True):
         
         if(lineCopy[y] == '"'):
@@ -91,7 +90,6 @@ while True:
 
     b = len(lineMod)
     c = 0
-    z = 1
 
     while(c < 13):
         lineMod = lineMod + lineCopy[b]
