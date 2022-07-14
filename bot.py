@@ -125,7 +125,6 @@ while True:
     with open(FILE_CSV_OUTPUT, "a") as text_file:
         text_file.write(lineMod)
         text_file.write("\n")
-        text_file.close()
 
     print("Riga generata con successo")
 
