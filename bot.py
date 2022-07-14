@@ -1,9 +1,24 @@
-FILE_CSV_INPUT = "c.txt"
-FILE_CSV_OUTPUT = "new.txt"
+###Sistemazione e riorganizzazione numerazioni in csv
 
+import os
+
+FILE_CSV_INPUT = (input("Buongiorno, inserisci il nome del file: "))
+FILE_CSV_INPUT_COPY = FILE_CSV_INPUT
+
+os.rename(FILE_CSV_INPUT, "old.txt")
+
+FILE_CSV_INPUT = "old.txt"
+FILE_CSV_OUTPUT = "new.txt"
 
 #Apertura del file csv
 f = open(FILE_CSV_INPUT,"r") 
+
+line = f.readline()
+
+with open(FILE_CSV_OUTPUT, "a") as text_file:
+    text_file.write("data,ora,cli,numero,area geografica,durata,importo,nng,vis_cli,prefix")
+    text_file.write("\n")
+    text_file.close()
 
 
 #Ciclo eseguito per ogni riga
@@ -17,6 +32,10 @@ while True:
 
     if not line:
         print("end")
+        f.close()
+        os.rename("new.txt", "new.csv")
+        os.rename(FILE_CSV_INPUT,FILE_CSV_INPUT_COPY)
+        w = input()
         exit()
 
 
@@ -102,8 +121,13 @@ while True:
 
 
 #Viene inserita la nuova stringa nel file
+    
     with open(FILE_CSV_OUTPUT, "a") as text_file:
         text_file.write(lineMod)
         text_file.write("\n")
+        text_file.close()
 
     print("Riga generata con successo")
+
+
+
