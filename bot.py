@@ -68,7 +68,8 @@ while True:
 
     lenLine = len(numero)
     if(numeroCambiare not in numero):
-        #numeroNuovo += '00'
+        if (numero[0] == '0' and numero[1] == '0'):
+            numeroNuovo += '00'
         numeroNuovo += numeroCambiare
         lenN = len(numeroCambiare)
 
